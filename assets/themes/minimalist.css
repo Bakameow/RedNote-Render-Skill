@@ -1,0 +1,76 @@
+/* ============================================
+   Minimalist — 极简现代风
+   配色参考：Dieter Rams / 日本侘寂 / Apple
+   SPDX-License-Identifier: MIT
+   ============================================ */
+
+.card-inner {
+  --color-bg:            #fafaf8;
+  --color-surface:       #ffffff;
+  --color-text:          #1c1c1c;
+  --color-text-subtle:   #6e6e6e;
+  --color-accent:        #0a0a0a;
+  --color-rule:          #e8e8e5;
+  --color-rule-strong:   #c8c8c4;
+  --color-callout-bg:    #f5f5f2;
+  --color-code-bg:       #f2f2ef;
+  --font-heading:        'Noto Serif SC', 'Source Han Serif CN', 'Songti SC', 'STSong', serif;
+  --font-body:           'Noto Sans SC', 'Source Han Sans CN', 'PingFang SC', sans-serif;
+  --font-mono:           'SF Mono', 'Monaco', 'Consolas', 'Courier New', monospace;
+
+  background-color: var(--color-bg);
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.003) 2px, rgba(0,0,0,0.003) 3px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.003) 2px, rgba(0,0,0,0.003) 3px);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03), 0 4px 16px rgba(0,0,0,0.03);
+}
+
+.card-content { font-family: var(--font-body); color: var(--color-text); font-size: 42px; line-height: 1.75; font-weight: 350; }
+
+.card-content h1 { font-family: var(--font-heading); font-size: 78px; font-weight: 700; color: var(--color-accent); margin-bottom: 48px; line-height: 1.25; letter-spacing: -0.015em; }
+.card-content h2 { font-family: var(--font-heading); font-size: 56px; font-weight: 650; color: #1c1c1c; margin: 56px 0 28px 0; line-height: 1.35; letter-spacing: -0.005em; padding-bottom: 16px; border-bottom: 1px solid var(--color-rule); }
+.card-content h3 { font-family: var(--font-body); font-size: 44px; font-weight: 600; color: #2e2e2e; margin: 40px 0 18px 0; letter-spacing: 0.02em; text-transform: uppercase; }
+.card-content p { margin-bottom: 36px; }
+
+.card-content strong, .card-content b { font-weight: 540; color: var(--color-accent); letter-spacing: 0.01em; }
+.card-content em, .card-content i { font-style: italic; color: var(--color-text-subtle); }
+.card-content strong em, .card-content b em, .card-content em strong, .card-content i b { font-weight: 540; font-style: italic; color: var(--color-accent); }
+.card-content del, .card-content s { text-decoration: line-through; color: var(--color-text-subtle); opacity: 0.55; }
+.card-content mark { background-color: rgba(0,0,0,0.05); color: inherit; padding: 0.05em 0.2em; border-radius: 2px; }
+.card-content a { color: var(--color-text); text-decoration: none; border-bottom: 1px solid var(--color-rule-strong); }
+
+/* ---- Lists — 极简克制 ---- */
+.card-content ul, .card-content ol { margin: 32px 0; }
+.card-content li { margin-bottom: 18px; line-height: 1.6; }
+
+/* ul: em dash，极低对比度 */
+.card-content ul { list-style: none; padding: 0; }
+.card-content ul li { position: relative; padding-left: 1.6em; }
+.card-content ul li::before { content: '\2014'; position: absolute; left: 0; top: 0; color: var(--color-rule-strong); }
+/* 二级：更细的 dash */
+.card-content ul ul li::before { content: '\2013'; color: var(--color-rule); }  /* en dash */
+
+/* ol: 最小干扰的数字 */
+.card-content ol { padding-left: 1.8em; }
+.card-content ol li { padding-left: 0.2em; }
+.card-content ol li::marker { color: var(--color-text-subtle); font-weight: 400; font-size: 0.88em; }
+.card-content ol ol { list-style: lower-alpha; }
+.card-content ol ol li::marker { color: var(--color-rule-strong); font-style: italic; }
+
+.card-content blockquote {
+  margin: 40px 0; padding: 36px 44px 36px 52px;
+  background: rgba(245,245,242,0.45); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  color: #3d3d3d; border-radius: 0 12px 12px 0;
+  box-shadow: inset 3px 0 0 var(--color-rule-strong), 0 2px 16px rgba(0,0,0,0.03);
+  border: 1px solid rgba(232,232,229,0.5);
+}
+.card-content blockquote p { margin: 0; font-style: normal; }
+
+.card-content code { font-family: var(--font-mono); font-size: 37px; background-color: var(--color-code-bg); color: #2a2a2a; padding: 5px 14px; border-radius: 3px; border: 1px solid var(--color-rule); }
+.card-content pre { margin: 36px 0; padding: 40px 44px; background-color: var(--color-code-bg); color: var(--color-text); border: 1px solid var(--color-rule); border-radius: 6px; overflow-x: visible; overflow-wrap: break-word; word-wrap: break-word; word-break: break-all; white-space: pre-wrap; line-height: 1.45; }
+.card-content pre code { background-color: transparent; color: inherit; padding: 0; border: none; font-size: 35px; }
+.card-content hr { margin: 56px 0; border: none; height: 1px; background: var(--color-rule); }
+.card-content img { display: block; max-width: 100%; height: auto; margin: 40px auto; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.03), 0 4px 12px rgba(0,0,0,0.03); }
+
+.tags-container { margin-top: 52px; padding-top: 32px; border-top: 1px solid var(--color-rule); }
+.tag { display: inline-block; background-color: var(--color-callout-bg); color: var(--color-text-subtle); padding: 10px 24px; border: 1px solid var(--color-rule); border-radius: 2px; font-size: 32px; margin: 8px 12px 8px 0; font-weight: 450; letter-spacing: 0.01em; }

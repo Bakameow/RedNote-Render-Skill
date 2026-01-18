@@ -1,0 +1,90 @@
+/* ============================================
+   Retro — 复古怀旧风格
+   配色参考：70s Kodak 胶片 + 企鹅经典书封
+   SPDX-License-Identifier: MIT
+   ============================================ */
+
+.card-inner {
+  --color-text:          #4d3828;
+  --color-text-strong:   #2e1a0c;
+  --color-text-subtle:   #8a7260;
+  --color-accent:        #b85c28;
+  --color-accent-soft:   #d4953a;
+  --color-bg:            #f7f0e4;
+  --color-bg-callout:    #efe0cc;
+  --color-bg-code:       #f4ecdc;
+  --color-rule:          #dacfbc;
+  --color-rule-strong:   #c4b598;
+  --font-heading:        'Noto Serif SC', 'Source Han Serif CN', 'Songti SC', serif;
+  --font-body:           'Noto Sans SC', 'Source Han Sans CN', 'PingFang SC', sans-serif;
+  --font-mono:           'Courier New', 'Courier', monospace;
+
+  background-color: var(--color-bg);
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 5px, rgba(139,100,60,0.012) 5px, rgba(139,100,60,0.012) 6px),
+    radial-gradient(ellipse at 30% 70%, rgba(184,140,90,0.05) 0, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(184,140,90,0.03) 0, transparent 60%);
+}
+
+.card-content { font-family: var(--font-body); color: var(--color-text); font-size: 42px; line-height: 1.78; font-weight: 380; }
+
+.card-content h1 {
+  font-family: var(--font-heading); font-size: 72px; font-weight: 700; color: var(--color-accent);
+  margin-bottom: 42px; line-height: 1.28; border-bottom: 4px double var(--color-accent); padding-bottom: 14px;
+}
+.card-content h2 { font-family: var(--font-heading); font-size: 56px; font-weight: 650; color: #5c3018; margin: 48px 0 24px 0; line-height: 1.35; }
+.card-content h3 { font-family: var(--font-heading); font-size: 46px; font-weight: 600; font-style: italic; color: #7a4a28; margin: 36px 0 16px 0; }
+.card-content p { margin-bottom: 34px; }
+
+.card-content strong, .card-content b {
+  font-weight: 600; color: var(--color-text-strong);
+  text-decoration: underline; text-decoration-color: var(--color-accent-soft);
+  text-underline-offset: 5px; text-decoration-thickness: 1.5px;
+}
+.card-content em, .card-content i { font-style: italic; color: var(--color-accent); }
+.card-content strong em, .card-content b em, .card-content em strong, .card-content i b { font-weight: 600; font-style: italic; color: var(--color-accent); }
+.card-content del, .card-content s { text-decoration: line-through; color: var(--color-text-subtle); opacity: 0.65; }
+.card-content mark { background-color: rgba(212,149,58,0.22); color: inherit; padding: 0.05em 0.2em; border-radius: 2px; }
+.card-content a { color: var(--color-accent); text-decoration: underline; text-decoration-style: wavy; text-underline-offset: 5px; }
+
+/* ---- Lists — 复古菱形 ul + 罗马数字 ol ---- */
+.card-content ul, .card-content ol { margin: 30px 0; }
+.card-content li { margin-bottom: 18px; line-height: 1.6; }
+
+/* ul: 小菱形 ◆，焦糖色 */
+.card-content ul { list-style: none; padding: 0; }
+.card-content ul li { position: relative; padding-left: 1.9em; }
+.card-content ul li::before {
+  content: '\25C6'; position: absolute; left: 0.2em; top: 0.02em;
+  color: var(--color-accent); font-size: 0.55em;
+}
+/* 二级：小方块 */
+.card-content ul ul li::before { content: '\25A0'; font-size: 0.4em; left: 0.3em; top: 0.05em; color: var(--color-accent-soft); }
+
+/* ol: 罗马数字 + 衬线体 */
+.card-content ol { padding-left: 2.2em; }
+.card-content ol li { padding-left: 0.3em; }
+.card-content ol li::marker {
+  color: var(--color-accent); font-weight: 600;
+  font-family: var(--font-heading); font-style: italic; font-size: 0.9em;
+}
+.card-content ol ol { list-style: lower-alpha; }
+.card-content ol ol li::marker { color: var(--color-text-subtle); font-weight: 400; font-style: italic; }
+
+.card-content blockquote {
+  margin: 36px 0; padding: 32px 40px;
+  background: rgba(239,224,204,0.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  color: var(--color-text);
+  box-shadow: inset 4px 0 0 var(--color-accent), 0 2px 10px rgba(0,0,0,0.04);
+  border-radius: 0 12px 12px 0; border: 1px solid rgba(218,207,188,0.5);
+}
+.card-content blockquote p { margin: 0; font-style: normal; }
+
+.card-content code { font-family: var(--font-mono); font-size: 37px; background-color: var(--color-bg-code); color: #5c3018; padding: 5px 14px; border-radius: 3px; border: 1px solid var(--color-rule); }
+.card-content pre { margin: 36px 0; padding: 36px 40px; background-color: #4d3828; color: #f7f0e4; border: 3px solid #2e1a0c; line-height: 1.5; overflow-x: visible; overflow-wrap: break-word; word-wrap: break-word; word-break: break-all; white-space: pre-wrap; }
+.card-content pre code { background: transparent; color: inherit; padding: 0; border: none; font-size: 35px; }
+.card-content hr { margin: 50px 0; border: none; height: 3px; background: repeating-linear-gradient(90deg, var(--color-accent), var(--color-accent) 10px, transparent 10px, transparent 20px); }
+.card-content img { display: block; max-width: 100%; height: auto; margin: 35px auto; border: 3px solid #2e1a0c; box-shadow: 4px 4px 0 var(--color-accent); }
+
+.tags-container { margin-top: 48px; padding-top: 28px; border-top: 3px double var(--color-accent); }
+.tag { display: inline-block; background-color: var(--color-accent); color: var(--color-bg); padding: 10px 22px; border-radius: 3px; font-size: 32px; margin: 8px 12px 8px 0; font-weight: 600; border: 2px solid #5c3018; }

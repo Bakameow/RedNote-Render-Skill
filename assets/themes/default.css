@@ -1,0 +1,131 @@
+/* ============================================
+   Default — 柔和现代风
+   配色参考：Linear + Vercel 设计系统（暖灰 + 靛蓝）
+   SPDX-License-Identifier: MIT
+   ============================================ */
+
+.card-inner {
+  --color-text:          #3d4147;
+  --color-text-strong:   #1a1d22;
+  --color-text-subtle:   #6f747c;
+  --color-accent:        #5b5fe0;
+  --color-accent-soft:   #a5a8f0;
+  --color-bg-card:       #fdfdfc;
+  --color-bg-callout:    #f3f4f8;
+  --color-bg-code:       #f8f9fb;
+  --color-rule:          #e6e7eb;
+  --color-rule-strong:   #d1d3d9;
+  --font-heading:        'Noto Serif SC', 'Source Han Serif CN', 'Songti SC', serif;
+  --font-body:           'Noto Sans SC', 'Source Han Sans CN', 'PingFang SC', sans-serif;
+  --font-mono:           'SF Mono', 'Monaco', 'Consolas', monospace;
+
+  background-color: var(--color-bg-card);
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 3px,
+      rgba(0,0,0,0.006) 3px, rgba(0,0,0,0.006) 4px);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.card-content {
+  font-family: var(--font-body);
+  color: var(--color-text); font-size: 42px; line-height: 1.72; font-weight: 380;
+}
+
+.card-content h1 {
+  font-family: var(--font-heading);
+  font-size: 72px; font-weight: 700; color: var(--color-text-strong);
+  margin-bottom: 44px; line-height: 1.28; letter-spacing: -0.01em;
+  padding-bottom: 18px; border-bottom: 2px solid var(--color-accent);
+}
+.card-content h2 {
+  font-family: var(--font-heading);
+  font-size: 56px; font-weight: 650; color: #2a2d33;
+  margin: 48px 0 24px 0; line-height: 1.35;
+}
+.card-content h3 {
+  font-family: var(--font-body);
+  font-size: 47px; font-weight: 600; color: #555a61;
+  margin: 38px 0 18px 0; letter-spacing: 0.01em;
+}
+.card-content p { margin-bottom: 34px; }
+
+.card-content strong, .card-content b {
+  font-weight: 560; color: var(--color-text-strong);
+  border-bottom: 1.5px solid var(--color-accent-soft);
+}
+.card-content em, .card-content i { font-style: italic; color: var(--color-accent); }
+.card-content strong em, .card-content b em,
+.card-content em strong, .card-content i b {
+  font-weight: 560; font-style: italic; color: var(--color-accent);
+  border-bottom: 1.5px solid var(--color-accent-soft);
+}
+.card-content del, .card-content s { text-decoration: line-through; color: var(--color-text-subtle); opacity: 0.7; }
+.card-content mark { background-color: rgba(91,95,224,0.14); color: inherit; padding: 0.05em 0.2em; border-radius: 2px; }
+.card-content a { color: var(--color-accent); text-decoration: none; border-bottom: 1.5px solid var(--color-accent-soft); }
+
+/* ---- Lists — 圆点 ul + 数字 ol ---- */
+.card-content ul, .card-content ol { margin: 30px 0; }
+.card-content li { margin-bottom: 18px; line-height: 1.6; }
+
+/* ul: 实心圆点，颜色呼应主题 */
+.card-content ul { list-style: none; padding: 0; }
+.card-content ul li { position: relative; padding-left: 1.8em; }
+.card-content ul li::before {
+  content: ''; position: absolute; left: 0.4em; top: 0.62em;
+  width: 10px; height: 10px; border-radius: 50%;
+  background-color: var(--color-accent);
+}
+/* 二级嵌套 ul */
+.card-content ul ul li::before {
+  width: 0; height: 0; background: none;
+  border: 2px solid var(--color-accent-soft); border-radius: 50%;
+  width: 9px; height: 9px; left: 0.4em; top: 0.62em;
+}
+/* 三级嵌套 ul */
+.card-content ul ul ul li::before {
+  border-radius: 1px; border: none;
+  background-color: var(--color-accent-soft);
+  width: 8px; height: 8px; left: 0.45em; top: 0.64em;
+}
+
+/* ol: 数字用主题色 */
+.card-content ol { padding-left: 1.8em; }
+.card-content ol li { padding-left: 0.4em; }
+.card-content ol li::marker { color: var(--color-accent); font-weight: 600; font-family: var(--font-mono); font-size: 0.9em; }
+/* 二级 ol */
+.card-content ol ol { list-style: lower-alpha; }
+.card-content ol ol li::marker { color: var(--color-text-subtle); font-weight: 500; font-family: var(--font-heading); font-style: italic; }
+
+.card-content blockquote {
+  margin: 36px 0; padding: 32px 40px;
+  background: rgba(243,244,248,0.55);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  color: var(--color-text-subtle);
+  box-shadow: inset 3px 0 0 var(--color-accent), 0 2px 12px rgba(0,0,0,0.04);
+  border-radius: 0 12px 12px 0; border: 1px solid rgba(230,231,235,0.6);
+}
+.card-content blockquote p { margin: 0; font-style: normal; }
+
+.card-content code {
+  font-family: var(--font-mono); font-size: 37px;
+  background-color: var(--color-bg-code); color: var(--color-accent);
+  padding: 5px 14px; border-radius: 4px; border: 1px solid var(--color-rule);
+}
+.card-content pre {
+  margin: 36px 0; padding: 36px 40px;
+  background-color: #1e2030; color: #e1e4ed;
+  border-radius: 10px; line-height: 1.5;
+  overflow-x: visible; overflow-wrap: break-word;
+  word-wrap: break-word; word-break: break-all; white-space: pre-wrap;
+}
+.card-content pre code { background: transparent; color: inherit; padding: 0; border: none; font-size: 35px; }
+.card-content hr { margin: 50px 0; border: none; height: 1px; background: var(--color-rule); }
+.card-content img { display: block; max-width: 100%; height: auto; margin: 36px auto; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+
+.tags-container { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--color-rule); }
+.tag {
+  display: inline-block;
+  background-color: var(--color-bg-callout); color: var(--color-accent);
+  padding: 10px 22px; border: 1px solid var(--color-rule-strong);
+  border-radius: 3px; font-size: 32px; margin: 8px 12px 8px 0; font-weight: 500;
+}

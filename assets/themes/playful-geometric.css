@@ -1,0 +1,102 @@
+/* ============================================
+   Playful Geometric — 活泼几何风格
+   配色参考：Memphis 设计运动 + Bold Pop
+   SPDX-License-Identifier: MIT
+   ============================================ */
+
+.card-inner {
+  --color-text:          #1e293b;
+  --color-bg:            #fffdf5;
+  --color-purple:        #8b5cf6;
+  --color-pink:          #f472b6;
+  --color-yellow:        #fbbf24;
+  --color-mint:          #34d399;
+  --color-black:         #1e293b;
+  --font-body:           'Noto Sans SC', 'Source Han Sans CN', 'PingFang SC', sans-serif;
+  --font-mono:           'SF Mono', 'Monaco', 'Consolas', monospace;
+
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle, rgba(139,92,246,0.06) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(244,114,182,0.06) 2px, transparent 2px);
+  background-size: 30px 30px, 50px 50px; background-position: 0 0, 15px 15px;
+}
+
+.card-content { font-family: var(--font-body); color: var(--color-text); font-size: 42px; line-height: 1.7; }
+
+.card-content h1 {
+  font-size: 72px; font-weight: 800; padding: 0.4em 0.65em; line-height: 1.22;
+  background-color: var(--color-purple); color: #ffffff;
+  border: 3px solid var(--color-black); border-radius: 0 28px 0 28px;
+  box-shadow: 6px 6px 0 var(--color-black); margin-bottom: 42px;
+}
+.card-content h2 {
+  font-size: 56px; font-weight: 800; padding: 0.3em 0.6em; line-height: 1.25;
+  background-color: var(--color-bg); color: #7c3aed;
+  border: 3px solid var(--color-black);
+  box-shadow: inset 10px 0 0 var(--color-purple), 5px 5px 0 var(--color-pink);
+  margin: 50px 0 25px 0;
+}
+.card-content h3 {
+  font-size: 48px; font-weight: 800; padding: 0.25em 0.65em; line-height: 1.25;
+  color: var(--color-black); background-color: var(--color-yellow);
+  border: 2px solid var(--color-black); border-radius: 9999px;
+  display: inline-block; box-shadow: 4px 4px 0 var(--color-black);
+  margin: 40px 0 20px 0;
+}
+.card-content p { margin-bottom: 35px; }
+
+.card-content strong, .card-content b {
+  font-weight: 700; color: var(--color-black);
+  background: linear-gradient(to top, var(--color-yellow) 0, var(--color-yellow) 55%, transparent 55%);
+  padding: 0 0.15em;
+}
+.card-content em, .card-content i { font-style: italic; color: var(--color-purple); font-weight: 500; }
+.card-content strong em, .card-content b em, .card-content em strong, .card-content i b { font-weight: 700; font-style: italic; color: var(--color-purple); background: linear-gradient(to top, var(--color-yellow) 0, var(--color-yellow) 55%, transparent 55%); }
+.card-content del, .card-content s { text-decoration: line-through; color: #94a3b8; opacity: 0.7; }
+.card-content mark { background-color: var(--color-pink); color: inherit; padding: 0.05em 0.2em; border-radius: 4px; }
+.card-content a { color: var(--color-purple); text-decoration: none; font-weight: 500; background-color: rgba(139,92,246,0.1); padding: 0.08em 0.25em; border-radius: 5px; border-bottom: 2px solid var(--color-purple); }
+
+/* ---- Lists — 几何色块 + 粗体数字 ---- */
+.card-content ul, .card-content ol { margin: 30px 0; }
+.card-content li { margin-bottom: 18px; line-height: 1.6; }
+
+/* ul: 彩色方块，每项可不同色（靠 nth-child） */
+.card-content ul { list-style: none; padding: 0; }
+.card-content ul li { position: relative; padding-left: 2em; }
+.card-content ul li::before {
+  content: ''; position: absolute; left: 0; top: 0.38em;
+  width: 15px; height: 15px;
+  border: 2px solid var(--color-black);
+}
+.card-content ul li:nth-child(4n+1)::before { background-color: var(--color-purple); }
+.card-content ul li:nth-child(4n+2)::before { background-color: var(--color-pink); }
+.card-content ul li:nth-child(4n+3)::before { background-color: var(--color-yellow); }
+.card-content ul li:nth-child(4n+4)::before { background-color: var(--color-mint); }
+/* 二级 ul：空心方块 */
+.card-content ul ul li::before { background-color: var(--color-bg) !important; }
+
+/* ol: 粗体黑数字 + 底部色条 */
+.card-content ol { padding-left: 2em; }
+.card-content ol li { padding-left: 0.3em; }
+.card-content ol li::marker { color: var(--color-black); font-weight: 900; font-size: 1em; }
+.card-content ol ol { list-style: lower-alpha; }
+.card-content ol ol li::marker { color: var(--color-purple); font-weight: 700; }
+
+.card-content blockquote {
+  margin: 35px 0; padding: 0.8em 1.1em 0.8em 1.6em;
+  background: rgba(244,114,182,0.85); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  color: var(--color-black); border: 3px solid var(--color-black);
+  box-shadow: inset 10px 0 0 var(--color-yellow), 6px 6px 0 var(--color-black);
+  border-radius: 0 28px 28px 0;
+}
+.card-content blockquote p { margin: 0; font-style: normal; }
+
+.card-content code { font-family: var(--font-mono); font-size: 38px; background-color: var(--color-yellow); color: var(--color-black); padding: 0.15em 0.5em; border: 2px solid var(--color-black); border-radius: 8px; }
+.card-content pre { margin: 35px 0; padding: 40px; background-color: var(--color-black); border: 3px solid var(--color-black); border-radius: 20px; box-shadow: 8px 8px 0 var(--color-purple); overflow-x: visible; overflow-wrap: break-word; word-wrap: break-word; word-break: break-all; white-space: pre-wrap; }
+.card-content pre code { background: transparent; color: #ffffff; padding: 0; border: none; font-size: 36px; line-height: 1.55; }
+.card-content hr { margin: 50px 0; border: none; height: 10px; border-radius: 9999px; background: repeating-linear-gradient(90deg, var(--color-purple) 0px, var(--color-purple) 24px, var(--color-pink) 24px, var(--color-pink) 48px, var(--color-yellow) 48px, var(--color-yellow) 72px, var(--color-mint) 72px, var(--color-mint) 96px); }
+.card-content img { display: block; max-width: 100%; height: auto; border: 4px solid var(--color-black); border-radius: 20px; box-shadow: 8px 8px 0 var(--color-black); margin: 35px auto; }
+
+.tags-container { margin-top: 50px; padding-top: 30px; border-top: 5px solid var(--color-yellow); }
+.tag { display: inline-block; background-color: var(--color-purple); color: white; padding: 12px 28px; border-radius: 9999px; font-size: 34px; margin: 10px 15px 10px 0; font-weight: 600; border: 2px solid var(--color-black); box-shadow: 3px 3px 0 var(--color-black); }
