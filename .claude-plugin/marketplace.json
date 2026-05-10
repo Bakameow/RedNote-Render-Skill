@@ -1,22 +1,22 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "comeonzhj-Auto-Redbook-Skills",
+  "name": "Bakameow-RedNote-Render-Skill",
   "owner": {
-    "name": "ZhangJia"
+    "name": "Bakameow"
   },
-  "description": "小红书笔记自动创作插件：撰写内容、生成图片卡片、一键发布",
+  "description": "RedNote/Xiaohongshu card rendering plugin: convert Markdown into styled image cards with 9 visual themes and automatic pagination.",
   "plugins": [
     {
-      "name": "auto-redbook-skills",
+      "name": "rednote-render-skill",
       "source": "./",
-      "description": "小红书笔记自动创作技能。支持 8 种排版主题和 4 种智能分页模式。",
+      "description": "Render Markdown to RedNote/Xiaohongshu style image cards with 9 visual themes. Auto-pagination based on content height.",
       "category": "content",
       "keywords": [
         "xiaohongshu",
-        "小红书",
+        "rednote",
         "redbook",
-        "social-media",
-        "content-creation"
+        "card-rendering",
+        "image-generation"
       ]
     }
   ]
